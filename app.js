@@ -10,28 +10,28 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Grid A: Cropped logos from the first sheet (9 logos)
     const gridALogos = [
-        { id: "Concept A-1", tag: "Circular Brandmark", file: "logo_a_1.png" },
-        { id: "Concept A-2", tag: "Minimal Monogram", file: "logo_a_2.png" },
-        { id: "Concept A-3", tag: "Heart Face Outline", file: "logo_a_3.png" },
-        { id: "Concept A-4", tag: "Solid Silhouette", file: "logo_a_4.png" },
-        { id: "Concept A-5", tag: "Leaf Monogram", file: "logo_a_5.png" },
-        { id: "Concept A-6", tag: "Sprout Stem Emblem", file: "logo_a_6.png" },
-        { id: "Concept A-7", tag: "Swooping Hearts", file: "logo_a_7.png" },
-        { id: "Concept A-8", tag: "Cradling Hands", file: "logo_a_8.png" },
-        { id: "Concept A-9", tag: "Sprouting Monogram", file: "logo_a_9.png" }
+        { id: "Concept A-1", tag: "Circular Brandmark", file: "logo_a_1.webp" },
+        { id: "Concept A-2", tag: "Minimal Monogram", file: "logo_a_2.webp" },
+        { id: "Concept A-3", tag: "Heart Face Outline", file: "logo_a_3.webp" },
+        { id: "Concept A-4", tag: "Solid Silhouette", file: "logo_a_4.webp" },
+        { id: "Concept A-5", tag: "Leaf Monogram", file: "logo_a_5.webp" },
+        { id: "Concept A-6", tag: "Sprout Stem Emblem", file: "logo_a_6.webp" },
+        { id: "Concept A-7", tag: "Swooping Hearts", file: "logo_a_7.webp" },
+        { id: "Concept A-8", tag: "Cradling Hands", file: "logo_a_8.webp" },
+        { id: "Concept A-9", tag: "Sprouting Monogram", file: "logo_a_9.webp" }
     ];
 
     // Grid B: Cropped logos from the second sheet (9 logos)
     const gridBLogos = [
-        { id: "Concept B-1", tag: "Sage Crescent", file: "logo_b_1.png" },
-        { id: "Concept B-2", tag: "Empathy Monogram", file: "logo_b_2.png" },
-        { id: "Concept B-3", tag: "Sprouting Accent", file: "logo_b_3.png" },
-        { id: "Concept B-4", tag: "Heart Ring Gradient", file: "logo_b_4.png" },
-        { id: "Concept B-5", tag: "Lotus Monogram", file: "logo_b_5.png" },
-        { id: "Concept B-6", tag: "Gold Infinity Foil", file: "logo_b_6.png" },
-        { id: "Concept B-7", tag: "Profile Monogram", file: "logo_b_7.png" },
-        { id: "Concept B-8", tag: "App Icon Gradient", file: "logo_b_8.png" },
-        { id: "Concept B-9", tag: "Support Crescent", file: "logo_b_9.png" }
+        { id: "Concept B-1", tag: "Sage Crescent", file: "logo_b_1.webp" },
+        { id: "Concept B-2", tag: "Empathy Monogram", file: "logo_b_2.webp" },
+        { id: "Concept B-3", tag: "Sprouting Accent", file: "logo_b_3.webp" },
+        { id: "Concept B-4", tag: "Heart Ring Gradient", file: "logo_b_4.webp" },
+        { id: "Concept B-5", tag: "Lotus Monogram", file: "logo_b_5.webp" },
+        { id: "Concept B-6", tag: "Gold Infinity Foil", file: "logo_b_6.webp" },
+        { id: "Concept B-7", tag: "Profile Monogram", file: "logo_b_7.webp" },
+        { id: "Concept B-8", tag: "App Icon Gradient", file: "logo_b_8.webp" },
+        { id: "Concept B-9", tag: "Support Crescent", file: "logo_b_9.webp" }
     ];
 
     // Build logo card elements
