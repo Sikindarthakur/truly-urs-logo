@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truly Ur's - Brand Identity & Logo Showcase</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logos/cropped/logo_main.png" alt="Truly Ur's Logo" class="nav-logo-img">
+                <span class="nav-logo-text">Truly Ur's</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#concept"><i class="fa-solid fa-compass"></i> Concept</a></li>
+                <li><a href="#gallery"><i class="fa-solid fa-images"></i> Logo Gallery</a></li>
+                <li><a href="#mockups"><i class="fa-solid fa-desktop"></i> Mockup Studio</a></li>
+                <li><a href="#guidelines"><i class="fa-solid fa-palette"></i> Brand Assets</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" title="Toggle Page Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge animate-fade-in">Brand Identity Presentation</div>
+                <h1 class="brand-title animate-slide-up">Truly Ur's</h1>
+                <p class="brand-slogan animate-slide-up-delayed">because your feelings matter</p>
+                <p class="brand-intro animate-fade-in-delayed">
+                    Welcome to the Truly Ur's visual system. A brand built on empathy, nature, and human connection. Below, explore our comprehensive design system, a collection of 19 logo variants, and live interactive mockups demonstrating how our identity shines across physical and digital mediums.
+                </p>
+                <div class="hero-buttons animate-fade-in-delayed">
+                    <a href="#gallery" class="btn btn-primary">Explore Gallery</a>
+                    <a href="#mockups" class="btn btn-secondary">View Mockups</a>
+                </div>
+            </div>
+            <div class="hero-showcase">
+                <div class="showcase-card-wrapper">
+                    <div class="showcase-card">
+                        <img src="logos/cropped/logo_main.png" alt="Truly Ur's Primary Logo" class="hero-main-logo">
+                        <div class="showcase-card-badge">Primary Brandmark</div>
+                    </div>
+                    <div class="showcase-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section id="concept" class="concept-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Brand Philosophy</span>
+                <h2>The Anatomy of our Identity</h2>
+                <div class="header-line"></div>
+                <p>Our logo is a symbol of care, growth, and personal connection. Every element has been crafted to communicate our core promise: that feelings truly matter.</p>
+            </div>
+            
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <h3>The Caring Hand</h3>
+                    <p>Cradling the design from below, the hand represents empathy, support, safety, and a comforting touch that acknowledges and holds your emotions.</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>The Sprouting Leaves</h3>
+                    <p>Signifying personal growth, emotional healing, nature, and fresh starts. It represents our capacity to grow and flourish when nurtured.</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon"><i class="fa-solid fa-face-smile"></i></div>
+                    <h3>The Silhouette</h3>
+                    <p>A gentle, peaceful human profile reflecting inward mindfulness, self-care, mental well-being, and individual human experiences.</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon"><i class="fa-solid fa-circle"></i></div>
+                    <h3>The Sun & Circle</h3>
+                    <p>The peach sun represents warmth, energy, and optimism, while the enclosing circular outline provides a sense of unity, safety, and completeness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Design Exploration</span>
+                <h2>The Logo Family</h2>
+                <div class="header-line"></div>
+                <p>We created 19 distinct variants to explore different weights, layouts, symbols, and backgrounds. Hover over any design to inspect, and <strong>click to apply it</strong> to our interactive Mockup Studio below.</p>
+            </div>
+
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <div class="control-group">
+                    <label>Gallery Background:</label>
+                    <div class="bg-switchers">
+                        <button class="bg-btn active" data-color="light" title="Light Background">
+                            <span class="dot dot-light"></span> Light
+                        </button>
+                        <button class="bg-btn" data-color="dark" title="Dark Background">
+                            <span class="dot dot-dark"></span> Dark
+                        </button>
+                        <button class="bg-btn" data-color="brand" title="Brand Green Background">
+                            <span class="dot dot-brand"></span> Brand Green
+                        </button>
+                    </div>
+                </div>
+                <div class="gallery-info">
+                    <span id="selected-count-text">Active Logo: <strong>Primary Brandmark</strong></span>
+                </div>
+            </div>
+
+            <!-- Logos Grid -->
+            <div class="logos-grid" id="logos-grid-container">
+                <!-- Main Logo -->
+                <div class="logo-card active-logo" data-logo-path="logos/cropped/logo_main.png" data-logo-name="Primary Logo">
+                    <div class="logo-card-inner">
+                        <div class="logo-img-wrapper">
+                            <img src="logos/cropped/logo_main.png" alt="Logo Main">
+                        </div>
+                        <div class="logo-card-info">
+                            <span class="logo-id">PRIMARY</span>
+                            <span class="logo-tag">Main Brandmark</span>
+                        </div>
+                    </div>
+                    <div class="logo-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
+                </div>
+
+                <!-- Grid A Cropped Logos (1-9) -->
+                <!-- Filled dynamically by JavaScript or pre-rendered -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mockup Studio Section -->
+    <section id="mockups" class="mockups-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Mockup Studio</span>
+                <h2>Live Brand Applications</h2>
+                <div class="header-line"></div>
+                <p>Select any logo from the gallery above to see it dynamically applied to these premium brand assets. We render them live using responsive styling.</p>
+            </div>
+
+            <!-- Mockups Grid -->
+            <div class="mockups-grid">
+                
+                <!-- Business Card (3D Rotatable) -->
+                <div class="mockup-card business-card-wrapper">
+                    <h3>Premium Business Card</h3>
+                    <p class="mockup-desc">Hover to flip the card and see both sides.</p>
+                    <div class="flip-card-container">
+                        <div class="flip-card">
+                            <!-- Card Front -->
+                            <div class="card-face card-front">
+                                <div class="card-glow"></div>
+                                <div class="card-logo-area">
+                                    <img src="logos/cropped/logo_main.png" alt="Logo" class="dynamic-logo-img logo-tint-coral">
+                                </div>
+                                <div class="card-footer">
+                                    <h4>Truly Ur's</h4>
+                                    <p>because your feelings matter</p>
+                                </div>
+                            </div>
+                            <!-- Card Back -->
+                            <div class="card-face card-back">
+                                <div class="card-back-header">
+                                    <img src="logos/cropped/logo_main.png" alt="Logo" class="dynamic-logo-img">
+                                    <div>
+                                        <h4>Truly Ur's</h4>
+                                        <span class="card-slogan-small">because your feelings matter</span>
+                                    </div>
+                                </div>
+                                <div class="card-contact">
+                                    <p class="contact-name">Alex Thorne</p>
+                                    <p class="contact-title">Lead Emotional Welcoming Officer</p>
+                                    <div class="contact-details">
+                                        <span><i class="fa-solid fa-envelope"></i> hello@trulyurs.com</span>
+                                        <span><i class="fa-solid fa-phone"></i> +1 (555) 019-2831</span>
+                                        <span><i class="fa-solid fa-location-dot"></i> 482 Heartwood Way, SF</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smartphone Screen -->
+                <div class="mockup-card mobile-mockup-wrapper">
+                    <h3>Mobile App Welcome Screen</h3>
+                    <p class="mockup-desc">Sleek preview of the Truly Ur's daily check-in app.</p>
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <span class="phone-time">9:41</span>
+                                <div class="phone-notch"></div>
+                                <div class="phone-icons">
+                                    <i class="fa-solid fa-signal"></i>
+                                    <i class="fa-solid fa-wifi"></i>
+                                    <i class="fa-solid fa-battery-three-quarters"></i>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="app-logo-container">
+                                    <img src="logos/cropped/logo_main.png" alt="Logo" class="dynamic-logo-img">
+                                </div>
+                                <h4 class="app-title">Truly Ur's</h4>
+                                <p class="app-subtitle">How are you feeling today?</p>
+                                
+                                <div class="feelings-selector">
+                                    <button class="feeling-btn"><span class="emoji">🌱</span> Calm</button>
+                                    <button class="feeling-btn"><span class="emoji">☀️</span> Joyful</button>
+                                    <button class="feeling-btn"><span class="emoji">🌧️</span> Tired</button>
+                                    <button class="feeling-btn"><span class="emoji">💨</span> Anxious</button>
+                                </div>
+                                
+                                <button class="app-main-btn">Begin Meditation</button>
+                                <span class="app-footer-text">because your feelings matter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office / Storefront Signage -->
+                <div class="mockup-card signage-mockup-wrapper">
+                    <h3>Architectural Glass Signage</h3>
+                    <p class="mockup-desc">Illuminated plaque mounted on a modern concrete wall.</p>
+                    <div class="signage-wall">
+                        <div class="signage-plaque">
+                            <div class="plaque-peg peg-tl"></div>
+                            <div class="plaque-peg peg-tr"></div>
+                            <div class="plaque-peg peg-bl"></div>
+                            <div class="plaque-peg peg-br"></div>
+                            <div class="plaque-content">
+                                <img src="logos/cropped/logo_main.png" alt="Logo" class="dynamic-logo-img">
+                                <div class="signage-text">
+                                    <span class="signage-brand">Truly Ur's</span>
+                                    <span class="signage-slogan">because your feelings matter</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Letterhead -->
+                <div class="mockup-card letterhead-mockup-wrapper">
+                    <h3>Premium Letterhead</h3>
+                    <p class="mockup-desc">Elegant corporate documentation layout.</p>
+                    <div class="letterhead-paper">
+                        <div class="letterhead-header">
+                            <div class="lh-left">
+                                <img src="logos/cropped/logo_main.png" alt="Logo" class="dynamic-logo-img">
+                                <div>
+                                    <span class="lh-brand">Truly Ur's</span>
+                                    <span class="lh-slogan">because your feelings matter</span>
+                                </div>
+                            </div>
+                            <div class="lh-right">
+                                <span class="lh-meta">Date: July 16, 2026</span>
+                                <span class="lh-meta">Ref: TU-2026-04</span>
+                            </div>
+                        </div>
+                        <div class="letterhead-line"></div>
+                        <div class="letterhead-body">
+                            <h5>Dear Friend,</h5>
+                            <p>Thank you for connecting with Truly Ur's. We believe that emotional safety is the foundation of creative and human expansion. Our visual identity has been refined to reflect this commitment.</p>
+                            <p>This layout serves as the official corporate correspondence format, designed to maintain breathing room and clean visual hierarchy while presenting the brand mark with quiet elegance.</p>
+                            <p>Warmest regards,</p>
+                            <div class="letterhead-signature">
+                                <p class="sig-name">The Creative Team</p>
+                                <p class="sig-title">Truly Ur's Identity Group</p>
+                            </div>
+                        </div>
+                        <div class="letterhead-footer">
+                            <div class="lh-footer-line"></div>
+                            <div class="lh-footer-details">
+                                <span>www.trulyurs.com</span>
+                                <span>hello@trulyurs.com</span>
+                                <span>SF &bull; NYC &bull; LDN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Assets / Guidelines Section -->
+    <section id="guidelines" class="guidelines-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Brand Standards</span>
+                <h2>Visual Guidelines</h2>
+                <div class="header-line"></div>
+                <p>The rules governing our brand's assets to maintain a unified identity across all touchpoints.</p>
+            </div>
+
+            <div class="guidelines-grid">
+                <!-- Color Palette -->
+                <div class="guide-card">
+                    <h3>Color System</h3>
+                    <p class="guide-desc">A harmonious blend of calming greens, comforting coral, and organic neutrals.</p>
+                    <div class="color-palette">
+                        <div class="color-block" style="background-color: var(--color-forest);" data-color="#0E3821">
+                            <div class="color-info">
+                                <span class="color-name">Forest Green</span>
+                                <span class="color-hex">#0E3821</span>
+                            </div>
+                            <button class="btn-copy" title="Copy HEX"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <div class="color-block" style="background-color: var(--color-peach); color: var(--color-forest);" data-color="#F29D7D">
+                            <div class="color-info">
+                                <span class="color-name">Coral Peach</span>
+                                <span class="color-hex">#F29D7D</span>
+                            </div>
+                            <button class="btn-copy" title="Copy HEX"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <div class="color-block" style="background-color: var(--color-sage); color: var(--color-forest);" data-color="#95A78D">
+                            <div class="color-info">
+                                <span class="color-name">Sage Green</span>
+                                <span class="color-hex">#95A78D</span>
+                            </div>
+                            <button class="btn-copy" title="Copy HEX"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <div class="color-block" style="background-color: var(--color-cream); color: var(--color-forest);" data-color="#FAF7F2">
+                            <div class="color-info">
+                                <span class="color-name">Alabaster Cream</span>
+                                <span class="color-hex">#FAF7F2</span>
+                            </div>
+                            <button class="btn-copy" title="Copy HEX"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typography -->
+                <div class="guide-card">
+                    <h3>Typography</h3>
+                    <p class="guide-desc">Our typefaces balance modern editorial elegance with clean, human accessibility.</p>
+                    <div class="typography-preview">
+                        <div class="font-spec">
+                            <span class="font-label">Primary Serif (Headers)</span>
+                            <h4 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 2.2rem; margin-top: 5px; color: var(--text-color-primary);">Playfair Display</h4>
+                            <p class="font-detail">Used for headlines, brand names, and display elements. Conveys elegance, thoughtfulness, and premium quality.</p>
+                        </div>
+                        <div class="font-spec">
+                            <span class="font-label">Secondary Sans-Serif (Body & Slogans)</span>
+                            <h4 style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.8rem; margin-top: 5px; color: var(--text-color-primary);">Outfit</h4>
+                            <p class="font-detail" style="font-family: 'Outfit', sans-serif;">Used for body text, subtitles, slogans, and buttons. Highly readable, geometric yet warm, and modern.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="logos/cropped/logo_main.png" alt="Logo" class="footer-logo-img">
+                    <span>Truly Ur's</span>
+                </div>
+                <p class="footer-slogan">because your feelings matter</p>
+            </div>
+            <div class="footer-links">
+                <h5>Identity Presentation</h5>
+                <p>Designed for Truly Ur's brand rollout &bull; &copy; 2026. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification for Copy Hex -->
+    <div id="toast" class="toast">Copied to clipboard!</div>
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
