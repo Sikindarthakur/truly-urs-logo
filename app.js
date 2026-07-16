@@ -205,8 +205,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const revealObserver = new IntersectionObserver(revealCallback, {
         root: null, // viewport
-        threshold: 0.15, // trigger when 15% is visible
-        rootMargin: "0px 0px -50px 0px" // offset bottom slightly
+        threshold: 0.02, // trigger when 2% is visible
+        rootMargin: "0px"
     });
 
     revealSections.forEach(section => {
