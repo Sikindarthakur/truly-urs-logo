@@ -8,30 +8,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // -------------------------------------------------------------
     const logosGrid = document.getElementById("logos-grid-container");
     
-    // Grid A: Cropped logos from the first sheet (9 logos)
-    const gridALogos = [
-        { id: "Concept A-1", tag: "Circular Brandmark", file: "logo_a_1.webp" },
-        { id: "Concept A-2", tag: "Minimal Monogram", file: "logo_a_2.webp" },
-        { id: "Concept A-3", tag: "Heart Face Outline", file: "logo_a_3.webp" },
-        { id: "Concept A-4", tag: "Solid Silhouette", file: "logo_a_4.webp" },
-        { id: "Concept A-5", tag: "Leaf Monogram", file: "logo_a_5.webp" },
-        { id: "Concept A-6", tag: "Sprout Stem Emblem", file: "logo_a_6.webp" },
-        { id: "Concept A-7", tag: "Swooping Hearts", file: "logo_a_7.webp" },
-        { id: "Concept A-8", tag: "Cradling Hands", file: "logo_a_8.webp" },
-        { id: "Concept A-9", tag: "Sprouting Monogram", file: "logo_a_9.webp" }
-    ];
-
-    // Grid B: Cropped logos from the second sheet (9 logos)
-    const gridBLogos = [
-        { id: "Concept B-1", tag: "Sage Crescent", file: "logo_b_1.webp" },
-        { id: "Concept B-2", tag: "Empathy Monogram", file: "logo_b_2.webp" },
-        { id: "Concept B-3", tag: "Sprouting Accent", file: "logo_b_3.webp" },
-        { id: "Concept B-4", tag: "Heart Ring Gradient", file: "logo_b_4.webp" },
-        { id: "Concept B-5", tag: "Lotus Monogram", file: "logo_b_5.webp" },
-        { id: "Concept B-6", tag: "Gold Infinity Foil", file: "logo_b_6.webp" },
-        { id: "Concept B-7", tag: "Profile Monogram", file: "logo_b_7.webp" },
-        { id: "Concept B-8", tag: "App Icon Gradient", file: "logo_b_8.webp" },
-        { id: "Concept B-9", tag: "Support Crescent", file: "logo_b_9.webp" }
+    // Fallback list of logos (including the new ones)
+    const fallbackLogos = [
+        { id: "Primary Logo", tag: "Main Brandmark", file: "logo_main.png" },
+        { id: "Concept A-1", tag: "Circular Brandmark", file: "logo_a_1.png" },
+        { id: "Concept A-2", tag: "Minimal Monogram", file: "logo_a_2.png" },
+        { id: "Concept A-3", tag: "Heart Face Outline", file: "logo_a_3.png" },
+        { id: "Concept A-4", tag: "Solid Silhouette", file: "logo_a_4.png" },
+        { id: "Concept A-5", tag: "Leaf Monogram", file: "logo_a_5.png" },
+        { id: "Concept A-6", tag: "Sprout Stem Emblem", file: "logo_a_6.png" },
+        { id: "Concept A-7", tag: "Swooping Hearts", file: "logo_a_7.png" },
+        { id: "Concept A-8", tag: "Cradling Hands", file: "logo_a_8.png" },
+        { id: "Concept A-9", tag: "Sprouting Monogram", file: "logo_a_9.png" },
+        { id: "Concept B-1", tag: "Sage Crescent", file: "logo_b_1.png" },
+        { id: "Concept B-2", tag: "Empathy Monogram", file: "logo_b_2.png" },
+        { id: "Concept B-3", tag: "Sprouting Accent", file: "logo_b_3.png" },
+        { id: "Concept B-4", tag: "Heart Ring Gradient", file: "logo_b_4.png" },
+        { id: "Concept B-5", tag: "Lotus Monogram", file: "logo_b_5.png" },
+        { id: "Concept B-6", tag: "Gold Infinity Foil", file: "logo_b_6.png" },
+        { id: "Concept B-7", tag: "Profile Monogram", file: "logo_b_7.png" },
+        { id: "Concept B-8", tag: "App Icon Gradient", file: "logo_b_8.png" },
+        { id: "Concept B-9", tag: "Support Crescent", file: "logo_b_9.png" },
+        { id: "Single Logo 1", tag: "Custom Concept 1", file: "logo_single_1_68c07e2c-8f8b-4.png" },
+        { id: "Single Logo 2", tag: "Custom Concept 2", file: "logo_single_2_ChatGPTImageJul.png" },
+        { id: "Single Logo 3", tag: "Custom Concept 3", file: "logo_single_3_ChatGPTImageJul.png" }
     ];
 
     // Build logo card elements
@@ -57,59 +57,114 @@ document.addEventListener("DOMContentLoaded", () => {
         return card;
     }
 
-    // Append Grid A logos
-    gridALogos.forEach(logo => {
-        logosGrid.appendChild(createLogoCard(logo));
-    });
-
-    // Append Grid B logos
-    gridBLogos.forEach(logo => {
-        logosGrid.appendChild(createLogoCard(logo));
-    });
-
-    // -------------------------------------------------------------
-    // 2. Active Logo State & Live Mockup Synchronization
-    // -------------------------------------------------------------
-    const logoCards = document.querySelectorAll(".logo-card");
-    const selectedCountText = document.getElementById("selected-count-text");
-    const dynamicLogos = document.querySelectorAll(".dynamic-logo-img");
-
-    logoCards.forEach(card => {
-        card.addEventListener("click", () => {
-            // Remove active state from all cards
-            logoCards.forEach(c => c.classList.remove("active-logo"));
+    async function initializeGallery() {
+        let logos = [];
+        try {
+            const response = await fetch("logos/cropped/");
+            if (!response.ok) throw new Error("Fetch listing failed");
             
-            // Add active state to clicked card
-            card.classList.add("active-logo");
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
             
-            const logoPath = card.getAttribute("data-logo-path");
-            const logoName = card.getAttribute("data-logo-name");
-            
-            // Update info text
-            selectedCountText.innerHTML = `Active Logo: <strong>${logoName}</strong>`;
-            
-            // Update all dynamic mockup logo images with a fade transition effect
-            dynamicLogos.forEach(img => {
-                // Check if it's the business card front logo (which uses a special CSS tint filter)
-                if (img.classList.contains("logo-tint-coral")) {
-                    // For the business card front, we tint white if the logo is a concept with white/dark background
-                    // In this case, the CSS class handles the tinting filter
-                }
+            const links = Array.from(doc.querySelectorAll("a"))
+                .map(a => a.getAttribute("href"))
+                .filter(href => href && href.endsWith(".png"));
                 
-                // Animate change
-                img.style.opacity = 0;
-                setTimeout(() => {
-                    img.src = logoPath;
-                    img.style.opacity = 1;
-                }, 150);
+            if (links.length > 0) {
+                const uniqueFiles = [...new Set(links)];
+                
+                logos = uniqueFiles.map(file => {
+                    let id = file;
+                    let tag = "Custom Concept";
+                    
+                    if (file === "logo_main.png") {
+                        id = "Primary Logo";
+                        tag = "Main Brandmark";
+                    } else if (file.startsWith("logo_a_")) {
+                        const num = file.replace("logo_a_", "").replace(".png", "");
+                        id = `Concept A-${num}`;
+                        const aTags = ["Circular Brandmark", "Minimal Monogram", "Heart Face Outline", "Solid Silhouette", "Leaf Monogram", "Sprout Stem Emblem", "Swooping Hearts", "Cradling Hands", "Sprouting Monogram"];
+                        tag = aTags[parseInt(num) - 1] || "Alternate Concept";
+                    } else if (file.startsWith("logo_b_")) {
+                        const num = file.replace("logo_b_", "").replace(".png", "");
+                        id = `Concept B-${num}`;
+                        const bTags = ["Sage Crescent", "Empathy Monogram", "Sprouting Accent", "Heart Ring Gradient", "Lotus Monogram", "Gold Infinity Foil", "Profile Monogram", "App Icon Gradient", "Support Crescent"];
+                        tag = bTags[parseInt(num) - 1] || "Alternate Concept";
+                    } else if (file.startsWith("logo_single_")) {
+                        const parts = file.replace("logo_single_", "").split("_");
+                        const index = parts[0];
+                        id = `Single Logo ${index}`;
+                        tag = "Custom Concept";
+                    }
+                    return { id, tag, file };
+                });
+                
+                // Sort logos so logo_main is first, then logo_a_*, then logo_b_*, then logo_single_*
+                logos.sort((a, b) => {
+                    if (a.file === "logo_main.png") return -1;
+                    if (b.file === "logo_main.png") return 1;
+                    if (a.file.startsWith("logo_a_") && b.file.startsWith("logo_b_")) return -1;
+                    if (a.file.startsWith("logo_b_") && b.file.startsWith("logo_a_")) return 1;
+                    if (a.file.startsWith("logo_single_") && !b.file.startsWith("logo_single_")) return 1;
+                    if (!a.file.startsWith("logo_single_") && b.file.startsWith("logo_single_")) return -1;
+                    return a.file.localeCompare(b.file, undefined, {numeric: true, sensitivity: 'base'});
+                });
+            } else {
+                logos = fallbackLogos;
+            }
+        } catch (e) {
+            logos = fallbackLogos;
+        }
+
+        // Render cards
+        logosGrid.innerHTML = "";
+        logos.forEach(logo => {
+            logosGrid.appendChild(createLogoCard(logo));
+        });
+
+        // Set up active state on the first card (which is logo_main.png)
+        const firstCard = logosGrid.querySelector(".logo-card");
+        if (firstCard) {
+            firstCard.classList.add("active-logo");
+        }
+
+        // Now bind event listeners since the DOM elements exist
+        setupEvents();
+    }
+
+    function setupEvents() {
+        const logoCards = document.querySelectorAll(".logo-card");
+        const selectedCountText = document.getElementById("selected-count-text");
+        const dynamicLogos = document.querySelectorAll(".dynamic-logo-img");
+
+        logoCards.forEach(card => {
+            card.addEventListener("click", () => {
+                logoCards.forEach(c => c.classList.remove("active-logo"));
+                card.classList.add("active-logo");
+                
+                const logoPath = card.getAttribute("data-logo-path");
+                const logoName = card.getAttribute("data-logo-name");
+                
+                selectedCountText.innerHTML = `Active Logo: <strong>${logoName}</strong>`;
+                
+                dynamicLogos.forEach(img => {
+                    img.style.opacity = 0;
+                    setTimeout(() => {
+                        img.src = logoPath;
+                        img.style.opacity = 1;
+                    }, 150);
+                });
             });
         });
-    });
 
-    // Add smooth transition style to mockup images
-    dynamicLogos.forEach(img => {
-        img.style.transition = "opacity 0.2s ease-in-out";
-    });
+        dynamicLogos.forEach(img => {
+            img.style.transition = "opacity 0.2s ease-in-out";
+        });
+    }
+
+    // Call dynamic initialize
+    initializeGallery();
 
     // -------------------------------------------------------------
     // 3. Gallery Background Switcher
